@@ -1,34 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   html {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    @apply dark;
   }
   
   body {
-    @apply bg-background text-primary-text;
+    @apply bg-background text-foreground;
   }
 }
 
 @layer components {
-  .stat-card {
-    @apply bg-surface border border-border rounded-xl p-5;
+  .prose-dark {
+    @apply prose prose-invert max-w-none;
   }
   
-  .stat-label {
-    @apply text-xs font-medium uppercase tracking-wide text-secondary-text;
+  .prose-dark h1,
+  .prose-dark h2,
+  .prose-dark h3,
+  .prose-dark h4,
+  .prose-dark h5,
+  .prose-dark h6 {
+    @apply text-foreground;
   }
   
-  .stat-value {
-    @apply text-3xl font-bold text-primary-text font-mono mt-1;
+  .prose-dark p {
+    @apply text-foreground;
   }
   
-  .stat-subtext {
-    @apply text-xs text-secondary-text mt-2;
+  .prose-dark a {
+    @apply text-primary hover:text-secondary;
+  }
+  
+  .prose-dark code {
+    @apply bg-gray-800 text-accent px-1 py-0.5 rounded text-sm;
+  }
+  
+  .prose-dark pre {
+    @apply bg-gray-900 border border-gray-700;
+  }
+  
+  .prose-dark pre code {
+    @apply bg-transparent p-0;
+  }
+  
+  .prose-dark blockquote {
+    @apply border-l-primary text-muted;
+  }
+  
+  .prose-dark table {
+    @apply border-collapse border border-gray-700;
+  }
+  
+  .prose-dark th,
+  .prose-dark td {
+    @apply border border-gray-700 px-3 py-2;
+  }
+  
+  .prose-dark th {
+    @apply bg-gray-800 font-semibold;
+  }
+  
+  .prose-dark ul,
+  .prose-dark ol {
+    @apply text-foreground;
+  }
+  
+  .prose-dark li {
+    @apply text-foreground;
+  }
+  
+  .prose-dark strong {
+    @apply text-foreground font-bold;
+  }
+  
+  .prose-dark em {
+    @apply text-foreground italic;
   }
 }
