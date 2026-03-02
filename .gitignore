@@ -1,6 +1,10 @@
 # Dependencies
 node_modules/
-.pnpm-store/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
 # Next.js
 .next/
@@ -16,11 +20,8 @@ dist/
 .env.production.local
 
 # Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+logs
+*.log
 
 # Runtime data
 pids
@@ -35,8 +36,9 @@ coverage/
 # nyc test coverage
 .nyc_output
 
-# ESLint cache
-.eslintcache
+# Dependency directories
+node_modules/
+jspm_packages/
 
 # TypeScript cache
 *.tsbuildinfo
@@ -71,6 +73,7 @@ coverage/
 
 # Nuxt.js build / generate output
 .nuxt
+dist
 
 # Storybook build outputs
 .out
