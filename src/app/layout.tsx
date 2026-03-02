@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { Sidebar, MobileSidebar } from '@/components/sidebar'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'VPS Command Center',
-  description: 'Self-hosted web dashboard for monitoring and managing a Linux VPS',
+  title: 'Markdown Preview',
+  description: 'Live Markdown preview web application with real-time rendering',
+  keywords: ['markdown', 'preview', 'editor', 'live', 'real-time'],
+  authors: [{ name: 'Markdown Preview App' }],
+  viewport: 'width=device-width, initial-scale=1',
 }
 
 export default function RootLayout({
@@ -16,24 +18,22 @@ export default function RootLayout({
   children: React.ReactNode
 }): JSX.Element {
   return (
-    <html lang="en" className={inter.className}>
-      <body className="bg-background text-primary-text">
-        <div className="flex h-screen">
-          {/* Desktop Sidebar */}
-          <div className="hidden md:block">
-            <Sidebar />
-          </div>
-          
-          {/* Main Content */}
-          <main className="flex-1 overflow-auto">
-            <div className="p-6 pb-20 md:pb-6">
-              {children}
+    <html lang="en" className={`dark ${inter.className}`}>
+      <body className="bg-background text-foreground antialiased">
+        <noscript>
+          <div className="fixed inset-0 bg-background flex items-center justify-center z-50">
+            <div className="text-center p-8">
+              <h1 className="text-2xl font-bold text-foreground mb-4">
+                JavaScript Required
+              </h1>
+              <p className="text-muted">
+                This application requires JavaScript to function properly.
+                Please enable JavaScript in your browser settings.
+              </p>
             </div>
-          </main>
-        </div>
-        
-        {/* Mobile Navigation */}
-        <MobileSidebar />
+          </div>
+        </noscript>
+        {children}
       </body>
     </html>
   )
