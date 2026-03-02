@@ -1,5 +1,10 @@
 # Markdown Preview
 
+> Built with [Dark Factory v4](https://github.com/ibuzzardo/dark-factory-v4) — autonomous AI software development pipeline
+
+**[Live Demo](https://markdown-preview-ibuzzardos-projects.vercel.app)**
+
+
 A live Markdown preview web application built with Next.js 15 App Router. Users can type Markdown in the left panel and see a styled HTML preview update in real-time on the right panel.
 
 ## Features
